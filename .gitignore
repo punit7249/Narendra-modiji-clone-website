@@ -1,0 +1,11 @@
+NM-web-clone/node_modules/
+NM-web-clone/dist/
+.npm/
+.DS_Store
+*.log
+node_modules/
+dist/
+package-lock.json
+.vscode/
+.env
+
