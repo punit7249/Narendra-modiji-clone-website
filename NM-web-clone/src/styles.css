@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-bjp-saffron: #F97D09;
+  --color-bjp-blue: #26318c;
+  --color-nm-cyan: #1bb8c9;
+  --color-navy-dark: #0f172a;
+}
+
+@layer base {
+  :root {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    color-scheme: light;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    background: #f8fafc;
+    font-size: 16px;
+    line-height: 1.35;
+  }
+
+  button,
+  select {
+    font: inherit;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  /* 3D Flip Styles */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+}
+
+@layer components {
+  .site-container {
+    width: min(76vw, 1442px);
+    margin-inline: auto;
+  }
+
+  @media (max-width: 900px) {
+    .site-container {
+      width: calc(100vw - 32px);
+    }
+  }
+
+  .nm-section-title {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border-bottom: 2px solid #19b8c9;
+    padding-bottom: 8px;
+  }
+
+  .nm-section-icon {
+    display: grid;
+    height: 48px;
+    width: 48px;
+    place-items: center;
+    background: #19b8c9;
+    color: white;
+  }
+
+  .nm-heading {
+    color: #1f2630;
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .nm-card-title {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.25;
+  }
+}
+
+@layer utilities {
+  .animate-rise {
+    animation: rise 640ms ease both;
+  }
+
+  .animate-hero-copy {
+    animation: hero-copy 620ms ease both;
+  }
+
+  .animate-float {
+    animation: float-card 4.5s ease-in-out infinite;
+  }
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes hero-copy {
+    from {
+      opacity: 0;
+      transform: translateX(-24px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes float-card {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+}
